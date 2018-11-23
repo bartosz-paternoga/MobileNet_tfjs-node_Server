@@ -82,8 +82,14 @@ const classify = async () => {
 
   z = y.replace(/"|"|{|}|\'/g,'');
 
+  console.log("TF BEFORE dispose", input);
+  console.log("------------------------------------------");
+  
   // free memory from TF-internal libraries from input image
-  input.dispose()
+  input.dispose();
+  
+  console.log("TF AFTER dispose", input);
+  console.log("------------------------------------------");
 }
 
 

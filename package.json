@@ -10,5 +10,9 @@
     "jpeg-js": "^0.3.4",
     "multer": "^1.4.1",
     "node-fetch": "^2.2.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
 }

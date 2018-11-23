@@ -28,11 +28,11 @@
 }
 
 #submitBtn {
-    margin-left: 30px;
+    margin-left: 40px;
     background-color: darkred; 
     border-radius: 12px;
     color: white;
-    padding: 10px 24px;
+    padding: 8px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

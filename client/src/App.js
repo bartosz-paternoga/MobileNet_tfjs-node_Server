@@ -75,11 +75,10 @@
               name="selectedFile"
               onChange={this.onChange}
             />
-            <button type="submit">Submit</button>
           </form>
 
 
-          <form onSubmit={this.onSubmit1}> </form>
+          <p id = "submitBtn" type="submit"  onClick = {this.onSubmit1} >Submit</p>
 
           <div>
               <p id = "submit">

@@ -8,6 +8,7 @@
     "@tensorflow/tfjs": "^0.13.5",
     "@tensorflow/tfjs-node": "^0.1.21",
     "jpeg-js": "^0.3.4",
+    "express": "^4.16.4",
     "multer": "^1.4.1",
     "node-fetch": "^2.2.0"
   },

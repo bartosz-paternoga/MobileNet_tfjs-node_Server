@@ -45,7 +45,9 @@
 
                 this.setState({prediction: z.toString()});
 
-                alert(z.substr(11, 105));
+                alert(z);
+
+                document.getElementById("input").value = "";
 
           });
 
@@ -73,7 +75,7 @@
               value={description}
               onChange={this.onChange}
             />*/}
-            <input 
+            <input id = "input"
               type="file"
               name="selectedFile"
               onChange={this.onChange}
@@ -81,14 +83,7 @@
             <button id = "submitBtn" type="submit">Submit</button>
           </form>
 
-
           <form onSubmit={this.onSubmit1}> </form>
-
-          <div>
-              <p id = "submit">
-                {this.state.prediction}
-              </p>
-          </div>
 
           </div>
         );

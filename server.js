@@ -74,10 +74,16 @@ const classify = async () => {
   console.log("memoryUsage classify start:", memoryUsage())
 
   const image = readImage()
+  console.log("memoryUsage classify readImage:", memoryUsage())
+
   const input = imageToInput(image, NUMBER_OF_CHANNELS)
+  console.log("memoryUsage classify input:", memoryUsage())
 
   const  mn_model = await loadModel()
+  console.log("memoryUsage classify loadModel:", memoryUsage())
+
   const predictions = await mn_model.classify(input)
+  console.log("memoryUsage classify predictions:", memoryUsage())
 
   const x = JSON.stringify(predictions);
 

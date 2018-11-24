@@ -62,7 +62,7 @@
               </header>
             </div><br/>
 
-          
+
           <form id = "submit" onSubmit={this.onSubmit}>
            {/* <input
               type="text"
@@ -73,6 +73,7 @@
             <input 
               type="file"
               name="selectedFile"
+              accept="image/*;capture=camera"
               onChange={this.onChange}
             />
             <button id = "submitBtn" type="submit">Submit</button>

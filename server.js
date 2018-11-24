@@ -69,6 +69,10 @@ const loadModel = async path => {
 }
 
 const classify = async () => {
+
+  console.log("------------------------------------------");
+  console.log("memoryUsage classify start:", memoryUsage())
+
   const image = readImage()
   const input = imageToInput(image, NUMBER_OF_CHANNELS)
 
@@ -119,6 +123,7 @@ const memoryUsage = () => {
 app.post('/', prediction, (req, res, next) => {
 
   console.log("server side analysed!");
+  console.log(z);
   res.send(z);
 
   next();

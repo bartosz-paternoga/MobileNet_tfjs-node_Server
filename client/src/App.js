@@ -13,7 +13,7 @@
 
 
       onChange = (e) => {
-            this.setState({ selectedFile: e.target.files });
+            this.setState({ selectedFile: e.target.files[0] });
 
       }
 

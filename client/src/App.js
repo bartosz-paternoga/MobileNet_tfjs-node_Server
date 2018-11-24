@@ -70,15 +70,14 @@
               value={description}
               onChange={this.onChange}
             />*/}
-            <input
+            <input 
               type="file"
               name="selectedFile"
               onChange={this.onChange}
             />
-          </form><br/>
+            <button type="submit">Submit</button>
+          </form>
 
-          <button id = "submitBtn" type="submit">Submit</button>
-          <form onSubmit={this.onSubmit1}> </form>
 
           <div>
               <p id = "submit">

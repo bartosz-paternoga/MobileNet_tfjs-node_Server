@@ -1,5 +1,6 @@
     import React, { Component } from 'react';
     import logo from './logo.svg';
+    import sound from './sound.mp3';
     import './App.css';
     import axios from 'axios';
 
@@ -35,7 +36,7 @@
 
         axios.post('/', formData)
           .then((result) => {
-
+                document.getElementById('xyz').play();
                 let z = result.data;
                 console.log("RE-post: ", z);
 
@@ -65,7 +66,7 @@
                 <h3> This app is using MobileNet model with tfjs-node to predict objects from an image</h3>
               </header>
             </div>
-
+              <audio id="xyz" src={sound} preload="auto"></audio>
               <p id = "submit">Press choose file to upload an image or make <br/>a pic if on mobile phone. Then press submit.</p>
           
           <form id = "submit" onSubmit={this.onSubmit}>

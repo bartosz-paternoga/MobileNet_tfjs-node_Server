@@ -72,7 +72,6 @@
             />*/}
             <input 
               type="file"
-              name="selectedFile"
               accept="image/*;capture=camera"
               onChange={this.onChange}
             />

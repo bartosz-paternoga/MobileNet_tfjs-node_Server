@@ -12,9 +12,15 @@
         };
 
 
-      onChange = (e) => {
-            this.setState({ selectedFile: e.target.files[0] });
 
+      onChange = (e) => {
+        switch (e.target.name) {
+          case 'selectedFile':
+            this.setState({ selectedFile: e.target.files[0] });
+            break;
+          default:
+            this.setState({ [e.target.name]: e.target.value });
+        }
       }
 
 

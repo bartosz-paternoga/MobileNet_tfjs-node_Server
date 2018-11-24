@@ -10,7 +10,8 @@ const app = express();
 app.use(express.static('client/build'));
 
 let z;
-let img ;
+let img;
+let mn_model;
 
 
 const storage = multer.memoryStorage()
@@ -79,7 +80,11 @@ const classify = async () => {
   const input = imageToInput(image, NUMBER_OF_CHANNELS)
   console.log("memoryUsage classify input:", memoryUsage())
 
-  const  mn_model = await loadModel()
+
+  if (!mn_model) {
+    mn_model = await loadModel()
+  }
+
   console.log("memoryUsage classify loadModel:", memoryUsage())
 
   const predictions = await mn_model.classify(input)

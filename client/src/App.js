@@ -45,7 +45,7 @@
 
                 this.setState({prediction: z.toString()});
 
-                alert("The file is successfully read!");
+                alert(z.substr(11, 105));
 
           });
 

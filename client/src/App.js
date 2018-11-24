@@ -72,7 +72,8 @@
             />*/}
             <input 
               type="file"
-              accept="image/*;capture=camera"
+              accept="image/*" 
+              capture="camera"
               onChange={this.onChange}
             />
             <button id = "submitBtn" type="submit">Submit</button>

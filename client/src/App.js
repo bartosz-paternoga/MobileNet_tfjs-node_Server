@@ -12,7 +12,6 @@
         };
 
 
-
       onChange = (e) => {
         switch (e.target.name) {
           case 'selectedFile':
@@ -63,7 +62,7 @@
               </header>
             </div><br/>
 
-
+          
           <form id = "submit" onSubmit={this.onSubmit}>
            {/* <input
               type="text"

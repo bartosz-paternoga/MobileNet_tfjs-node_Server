@@ -16,11 +16,9 @@
         switch (e.target.name) {
           case 'selectedFile':
             this.setState({ selectedFile: e.target.files[0] });
-            this.setState({ prediction: '' });
             break;
           default:
             this.setState({ [e.target.name]: e.target.value });
-            this.setState({ prediction: '' });
         }
       }
 

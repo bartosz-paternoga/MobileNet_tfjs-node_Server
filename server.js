@@ -21,10 +21,9 @@ app.post('/', upload, (req, res, next) => {
 
     console.log('Uploaded: ', req.file)
     console.log('<<<----------------------------------------->>>')
-    console.log('buffor: ', req.file.buffer)
 
     img = req.file.buffer;
-    console.log('img: ', img)
+
     next();
 });
 
@@ -82,23 +81,22 @@ const classify = async () => {
 
   z = y.replace(/"|"|{|}|\'/g,'');
 
-  console.log("TF BEFORE dispose", input);
   console.log("------------------------------------------");
+  console.log("memoryUsage BEFORE dispose:", memoryUsage())
   
   // free memory from TF-internal libraries from input image
-  input.dispose();
+  input.dispose()
   
-  console.log("TF AFTER dispose", input);
   console.log("------------------------------------------");
+  console.log("memoryUsage AFTER dispose:", memoryUsage())
 }
 
 
-const myLogger  = async  (req, res, next) => {
+const prediction  = async  (req, res, next) => {
 
   try {
-      const y = await classify();
-      console.log('<<<------------------------------------------->>>')
-      console.log(z);
+      const pred = await classify();
+
   } catch (e) {
         next(e);
       }
@@ -106,8 +104,19 @@ const myLogger  = async  (req, res, next) => {
 }
 
 
+const memoryUsage = () => {
+  let used = process.memoryUsage();
+  const values = []
+  for (let key in used) {
+    values.push(`${key}=${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+  }
 
-app.post('/', myLogger, (req, res, next) => {
+  return `memory used: ${values.join(', ')}`
+}
+
+
+
+app.post('/', prediction, (req, res, next) => {
 
   console.log("server side analysed!");
   res.send(z);

@@ -37,7 +37,7 @@
   }
 }
 
-/*#submitBtn {
+#submitBtn {
     background-color: darkblue; 
     border-radius: 12px;
     color: white;
@@ -47,4 +47,4 @@
     display: inline-block;
     font-size: 14px;
     cursor:pointer;
-}*/
+}

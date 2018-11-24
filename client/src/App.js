@@ -45,7 +45,7 @@
                 console.log(this.state.selectedFile);
 
                 this.setState({prediction: z.toString()});
-
+                document.getElementById('xyz').play();
                 alert(z);
 
                 document.getElementById("input").value = "";

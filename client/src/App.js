@@ -16,9 +16,11 @@
         switch (e.target.name) {
           case 'selectedFile':
             this.setState({ selectedFile: e.target.files[0] });
+            this.setState({ prediction: '' });
             break;
           default:
             this.setState({ [e.target.name]: e.target.value });
+            this.setState({ prediction: '' });
         }
       }
 
@@ -60,8 +62,9 @@
                 <img src={logo} className="App-logo" alt="logo" />
                 <h3> This app is using MobileNet model with tfjs-node to predict objects from an image</h3>
               </header>
-            </div><br/>
+            </div>
 
+              <p id = "submit">Press choose file to upload an image or make <br/>a pic if on mobile phone. Then press submit.</p>
           
           <form id = "submit" onSubmit={this.onSubmit}>
            {/* <input

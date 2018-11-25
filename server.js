@@ -64,7 +64,7 @@ const imageToInput = (image, numChannels) => {
 
 const loadModel = async path => {
   const mn = new mobilenet.MobileNet(1, 1);
-  mn.path = `file://./client/public/mobilenet/model.json`
+  mn.path = `file://./client/build/mobilenet/model.json`
   await mn.load()
   return mn
 }
